@@ -1,5 +1,5 @@
-package co.edu.umanizales.tads.service;
 
+import co.edu.umanizales.tads.exception.ListSEException;
 import co.edu.umanizales.tads.model.Kid;
 import co.edu.umanizales.tads.model.ListSE;
 import lombok.Data;
@@ -13,19 +13,30 @@ public class ListSEService {
     public ListSEService() {
         kids = new ListSE();
     }
-    public void invert(){kids.invert();}
-    public void changeExtremes(){kids.changeExtremes();}
-    public void add(Kid kid){kids.add(kid);}
-    public int getCountKidsBylocationsCode(String code){return kids.getCountKidsByLocationCode(code);}
-    public void deleteKidbyAge(byte age){kids.DeleteByAge(age);}
-    public void gainPositionKid(String id,int gain){kids.gainPositionKid(id,gain);}
-    public int getCountKidsBylocationAndGender(String code){return kids.getCountKidsByLocationCode(code);}
-    public int getCountKidsByLocationAndGender(String code){return  kids.getCountKidsByLocationCode(code);}
-    public void IntercaleBoyandGirl(){kids.IntercaleBoyandGirl();}
-    public void LosePositionKid(String id , int lose){kids.LosePositionKid(id, lose);}
 
+    public void KidsDataService() {
+        kids = new ListSE();
+    }
+
+    //public Node getKids() { return kids.getHead();}
+    /*
+    public Node getKids()
+     */
+
+    public void deleteByAge(byte age) throws ListSEException {
+        kids.deleteByAge(age);
+    }
+
+    public void invert() throws ListSEException {
+        kids.invert();
+    }
+
+    public void addToStart(Kid kid) throws ListSEException {
+        kids.addToStart(kid);
+    }
+
+    public void addToFinal(Kid kid){
+        kids.addToFinal(kid);
+    }
 
 }
-
-
-    

@@ -1,4 +1,4 @@
-package co.edu.umanizales.tads.ecxeption;
+package co.edu.umanizales.tads.exception;
 
 public class ListSEException extends Exception{
     public ListSEException(String message){
